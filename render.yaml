@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: djam3iyati-api
+    env: node
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: JWT_SECRET
+        generateValue: true
+      - key: REDIS_URL
+        value: redis://localhost:6379
+databases:
+  - name: djam3iyati-db
+    plan: free
